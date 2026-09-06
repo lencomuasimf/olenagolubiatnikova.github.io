@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;scroll-behavior:smooth;}
+  body{background:#ffffff;}
+  a{color:#181717;text-decoration:none;}
+  a:hover{color:#1FC056;}
+  ::selection{background:#1FC056;color:#fff;}
+  section[id]{scroll-margin-top:110px;}
+  .navlink{position:relative;transition:color .2s ease;}
+  .navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#1FC056;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  .navlink:hover::after,.navlink.active::after{transform:scaleX(1);}
+  .toc{display:block;color:#606060;transition:color .2s ease;position:relative;padding-left:22px;line-height:1.2;}
+  .toc::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#1FC056;transform:translateY(-50%) scale(0);transition:transform .22s ease;}
+  .toc:hover{color:#181717;}
+  .toc.active{color:#1FC056;}
+  .toc.active::before{transform:translateY(-50%) scale(1);}
+  .reveal{opacity:0;transform:translateY(26px);}
+  .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease;}
+  figure{margin:0;}
+  figcaption{font-size:14px;color:#9a9a9a;line-height:1.4;margin-top:14px;}
+  @media (max-width:820px){
+    header{padding:20px 22px !important;gap:16px !important;}
+    header nav{gap:24px !important;}
+    main{padding:24px 22px 64px !important;}
+    footer{padding:28px 22px 40px !important;flex-wrap:wrap;justify-content:flex-start !important;gap:22px 32px !important;}
+    h1{font-size:38px !important;}
+    h2{font-size:28px !important;}
+    [style*="display:flex;gap:72px"]{flex-direction:column !important;gap:8px !important;}
+    aside[style*="flex:0 0 200px"]{display:none !important;}
+    [style*="max-width:880px"]{max-width:100% !important;}
+    [style*="display:grid"]{grid-template-columns:1fr !important;}
+    [style*="display:flex;gap:32px"]{flex-direction:column !important;gap:20px !important;}
+  }
+  @media (max-width:440px){
+    header nav{gap:16px !important;font-size:15px !important;}
+    h1{font-size:32px !important;}
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#181717;font-family:'Anonymous Pro',ui-monospace,monospace;display:flex;flex-direction:column;">
+
+  <header style="max-width:1440px;width:100%;margin:0 auto;padding:28px 80px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:sticky;top:0;z-index:50;background:#ffffff;">
+    <a href="Home.dc.html" style="font-size:16px;line-height:1.1;letter-spacing:.005em;color:#000;">Olena<br>Golubiatnikova</a>
+    <nav style="display:flex;gap:56px;font-size:16px;padding-bottom:2px;">
+      <a class="navlink active" href="Home.dc.html">Home</a>
+      <a class="navlink" href="About.dc.html">About</a>
+      <a class="navlink" href="Other.dc.html">Notes</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1440px;width:100%;margin:0 auto;padding:32px 80px 80px;flex:1;">
+
+    <div style="font-size:18px;color:#606060;margin-bottom:14px;">2026 Q1 · Wunderflats</div>
+    <h1 style="font-size:60px;font-weight:700;line-height:1.05;margin:0 0 20px;max-width:1100px;">Onboarding adapting to every user</h1>
+    <p style="font-size:16px;font-style:italic;line-height:1.4;color:#606060;margin:0 0 44px;max-width:760px;">One flow that meets landlords wherever they are, regardless of digital literacy.</p>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding:32px 0;border-top:1px solid #181717;border-bottom:1px solid #181717;margin-bottom:72px;">
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">My role</div>
+        <div style="font-size:16px;color:#606060;line-height:1.35;">Ideation, user research, strategy, design, implementation support</div>
+      </div>
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Team</div>
+        <div style="display:flex;align-items:center;font-size:15px;font-weight:700;line-height:1;padding-top:2px;">
+          <span title="Me (Product Designer)" style="width:48px;height:48px;border-radius:50%;background:#1FC056;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:4;">Me</span>
+          <span title="Product Manager" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:3;margin-left:-6px;">PM</span>
+          <span title="Tech Lead" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:2;margin-left:-6px;">TL</span>
+          <span title="Developer" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:1;margin-left:-6px;">Dev</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Timeline</div>
+        <div style="font-size:16px;color:#606060;line-height:1.35;">Q1 2026</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:72px;align-items:flex-start;">
+
+      <aside style="flex:0 0 200px;position:sticky;top:110px;align-self:flex-start;">
+        <nav style="display:flex;flex-direction:column;gap:20px;font-size:14px;">
+          <a class="toc" href="#problem" data-t="problem">The problem</a>
+          <a class="toc" href="#approach" data-t="approach">How I approached it</a>
+          <a class="toc" href="#pains" data-t="pains">Top pain points</a>
+          <a class="toc" href="#solving" data-t="solving">Solving it</a>
+          <a class="toc" href="#live" data-t="live">What went live</a>
+          <a class="toc" href="#impact" data-t="impact">Impact</a>
+        </nav>
+      </aside>
+
+      <div style="flex:1;min-width:0;max-width:880px;display:flex;flex-direction:column;gap:64px;">
+
+        <section id="problem" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">The problem</h2>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 32px;color:#181717;">To enable rent collection, landlords must complete three required steps. Each step is located in a different part of the platform and has its own notifications and status updates.</p>
+          <div style="font-size:15px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:20px;">THE COST OF THAT</div>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #B8BCC1;">
+            <div style="padding:22px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="font-size:19px;font-weight:700;margin-bottom:6px;">Slow marketplace growth</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Complicated onboarding kept users from activating.</div>
+            </div>
+            <div style="padding:22px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="font-size:19px;font-weight:700;margin-bottom:6px;">Heavy support load</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Customer Ops spent significant time walking users through the steps.</div>
+            </div>
+            <div style="padding:22px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="font-size:19px;font-weight:700;margin-bottom:6px;">Lost bookings</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">A critical step, adding a bank account, interrupted the booking flow and caused conversion to drop at the worst possible moment.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="approach" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">How I approached it</h2>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #181717;">
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">01</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">Mapped the current onboarding</div><div style="font-size:16px;color:#606060;line-height:1.45;">Onboarding tasks were scattered everywhere and so were the notifications about them.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">02</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">Looked at the data</div><div style="font-size:16px;color:#606060;line-height:1.45;">Data analysis showed that the step of listing connection to the bank account had the lowest completion, largely because users had no preview of their actions.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">03</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">User interviews + feedback from Customer Ops</div><div style="font-size:16px;color:#606060;line-height:1.45;">Talking to Customer Ops highlighted the highest failing group of users: those with lower digital literacy who rely on SMS. They have limited access to the banners, notifications and in-platform messaging, so the current experience essentially leaves them uninformed.</div></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pains" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">Top pain points</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Interrupted flow</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Booking flow interruptions were causing conversion drop.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Banner blindness</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Requirements were communicated through banners. With several requirements at once, the screen was showing competing banners and only <b style="color:#181717;">14%</b> of users clicked the banner CTA.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">“Just tell me what to do.”</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Some tasks had long banner descriptions; others (like notification bubbles) had none. Inconsistent guidance plus too many steps created confusion and cognitive load.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Limited onboarding reach</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Our onboarding relied solely on in-platform notifications, leaving users who rely on SMS out of the onboarding experience.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solving" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">Solving it</h2>
+
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">Ideate, then prioritise</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 16px;color:#181717;">Before the team workshop, I drafted ideas mapped to each pain point, for example:</p>
+          <ul style="font-size:16px;line-height:1.5;color:#606060;margin:0 0 20px;padding-left:24px;display:flex;flex-direction:column;gap:10px;">
+            <li>A <b style="color:#181717;">Customer Ops handbook</b> so support could guide users consistently.</li>
+            <li>A <b style="color:#181717;">floating button / updated bubble</b> showing remaining tasks.</li>
+            <li><b style="color:#181717;">One home page for all tasks</b>: not just for onboarding, but future ones too (DAC7 compliance, deposit collection, and more).</li>
+          </ul>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 44px;color:#606060;">I ran a workshop with the wider team to understand the technical complexity and decide what to ship first and what to do later.</p>
+
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">The strategy</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 24px;color:#181717;">Ship something small and cost-effective fast, while building the bigger fix in parallel.</p>
+          <div style="display:flex;gap:32px;margin:0 0 24px;">
+            <div style="flex:1;border-top:2px solid #1FC056;padding-top:18px;">
+              <div style="font-size:13px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:10px;">QUICK WIN</div>
+              <div style="font-size:16px;line-height:1.45;">The onboarding handbook.</div>
+            </div>
+            <div style="flex:1;border-top:2px solid #1FC056;padding-top:18px;">
+              <div style="font-size:13px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:10px;">LONG-TERM</div>
+              <div style="font-size:16px;line-height:1.45;">One flow for every situation → <b>Monoflow.</b> Entry points not only through the platform, but also via SMS and email.</div>
+            </div>
+          </div>
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">Prototype and test</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 44px;color:#606060;">The first prototype was a mess: tasks in mismatched styles (Stripe onboarding looked nothing like listing connection), and edge cases surfaced all at once. Testing made one thing clear: <b style="color:#181717;">naming matters, and people need plain language to be able to understand each step.</b></p>
+          <figure style="margin:-24px 0 44px;">
+            <div style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;">
+              <image-slot id="onb-prototype" shape="rect" placeholder="First prototype / testing screens"></image-slot>
+            </div>
+          </figure>
+
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">Iterate and map entry points</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 40px;color:#606060;">After the first round I significantly improved the copy and redesigned the screens for a seamless experience. Mobile was prioritised. Then I mapped <b style="color: rgb(24, 23, 23);">entry points</b>: not just the SMS link, but a permanent home page on the dashboard with a notification bubble. One place to manage every operational task.</p><image-slot id="onb-strategy" shape="rect" placeholder="Strategy / prioritisation map"></image-slot>
+        </section>
+
+        <section id="live" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">What went live</h2>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #181717;">
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">1</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">Dynamic Monoflow</div><div style="font-size:16px;color:#606060;line-height:1.45;">Decides which tasks to show, and when.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">2</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">In-platform entry points</div><div style="font-size:16px;color:#606060;line-height:1.45;">Dashboard home + bubble. No more banners!</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">3</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">Out-of-platform entry points</div><div style="font-size:16px;color:#606060;line-height:1.45;">SMS onboarding link + email campaign.</div></div>
+            </div>
+          </div>
+          <figure style="margin:40px 0 0;display:flex;justify-content:center;">
+            <div style="width:100%;max-width:340px;aspect-ratio:668/1454;border-radius:8px;overflow:hidden;background:#181717;box-shadow:0 8px 24px rgba(24,23,23,0.15);">
+              <video id="onb-live-video" src="uploads/prototype_h264_aac.mp4" autoplay="" muted="" loop="" playsinline="" style="width:100%;height:100%;object-fit:contain;display:block;"></video>
+            </div>
+          </figure>
+        </section>
+
+        <section id="impact" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">Impact</h2>
+          <div style="margin-bottom:36px;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">+7%</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">Bank accounts onboarded</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">In the first week after launching Monoflow and the dashboard entry point.</div>
+              </div>
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">↑</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">Activation rate</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">A single guided flow raised activation rate across the marketplace.</div>
+              </div>
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">↑</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">More bookings</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">Fewer interruptions in the booking flow improved conversion.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <p style="font-size:16px;line-height:1.5;margin:0;color:#606060;"><b style="color:#181717;">Fewer support requests</b> related to onboarding.</p>
+            <p style="font-size:16px;line-height:1.5;margin:0;color:#606060;"><b style="color: rgb(24, 23, 23);">Better UX across the product</b>: Monoflow rebuilt multiple scattered forms, so they’re now consistent, accessible, and have better usability.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer style="max-width:1440px;width:100%;margin:0 auto;padding:40px 80px 56px;display:flex;justify-content:flex-end;gap:56px;font-size:16px;">
+    <a href="#" style="display:inline-flex;align-items:center;gap:14px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"></path><path d="M12 11v6"></path><path d="m15 15-3 3-3-3"></path></svg>
+      Download resume
+    </a>
+    <a href="https://www.linkedin.com/in/lencomua/" target="_blank" rel="noopener">Linkedin</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const vid = document.getElementById('onb-live-video');
+    if (vid) { vid.muted = true; vid.loop = true; vid.play && vid.play().catch(() => {}); }
+
+    const revs = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revs.forEach(el => ro.observe(el));
+
+    const links = Array.from(document.querySelectorAll('.toc'));
+    const byId = {};
+    links.forEach(l => byId[l.getAttribute('data-t')] = l);
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const a = byId[e.target.id];
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(s => spy.observe(s));
+    if (links[0]) links[0].classList.add('active');
+  }
+}
+</script>
+</body>
+</html>

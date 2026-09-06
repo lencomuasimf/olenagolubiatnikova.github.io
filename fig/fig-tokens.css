@@ -1,0 +1,100 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --color-background-grey-lighter: var(--colors-grey-grey-50); /* @kind color */
+  --color-background-grey-subtle-2: var(--colors-grey-grey-300); /* @kind color */
+  --color-background-grey-subtle: var(--colors-grey-grey-100); /* @kind color */
+  --color-background-purple-dark: var(--colors-purple-purple-600); /* @kind color */
+  --color-background-purple-darker-2: var(--colors-purple-purple-800); /* @kind color */
+  --color-background-purple-darker-3: var(--colors-purple-purple-900); /* @kind color */
+  --color-background-purple-default: var(--colors-purple-purple-500); /* @kind color */
+  --color-background-purple-subtle: var(--colors-purple-purple-100); /* @kind color */
+  --color-background-red-dark: var(--colors-red-red-600); /* @kind color */
+  --color-background-red-darker: var(--colors-red-red-650); /* @kind color */
+  --color-background-red-default: var(--colors-red-red-500); /* @kind color */
+  --color-background-red-subtle: var(--colors-red-red-100); /* @kind color */
+  --color-background-white-default-2: var(--colors-white-white-00); /* @kind color */
+  --color-background-white-default: var(--colors-white-white-00); /* @kind color */
+  --color-border-grey-darker: var(--colors-grey-grey-700); /* @kind color */
+  --color-border-grey-default: var(--colors-grey-grey-500); /* @kind color */
+  --color-border-grey-lighter: var(--colors-grey-grey-25); /* @kind color */
+  --color-border-grey-subtle: var(--colors-grey-grey-100); /* @kind color */
+  --color-border-purple-darker-2-2: var(--colors-purple-purple-900); /* @kind color */
+  --color-border-purple-darker-2: var(--colors-purple-purple-900); /* @kind color */
+  --color-border-purple-default: var(--colors-purple-purple-500); /* @kind color */
+  --color-border-purple-lighter: var(--colors-purple-purple-100); /* @kind color */
+  --color-border-purple-subtle: var(--colors-purple-purple-300); /* @kind color */
+  --color-border-red-default: var(--colors-red-red-500); /* @kind color */
+  --color-border-red-subtle: var(--colors-red-red-100); /* @kind color */
+  --color-border-white-default: var(--colors-white-white-00); /* @kind color */
+  --color-brand-fast-black: var(--colors-purple-purple-900); /* @kind color */
+  --color-text-grey-darker-2: var(--colors-grey-grey-900); /* @kind color */
+  --color-text-grey-darker: var(--colors-grey-grey-900); /* @kind color */
+  --color-text-grey-default: var(--colors-grey-grey-800); /* @kind color */
+  --color-text-grey-subtle: var(--colors-grey-grey-600); /* @kind color */
+  --color-text-purple-darker-2: var(--colors-purple-purple-900); /* @kind color */
+  --color-text-purple-darker-3: var(--colors-purple-purple-900); /* @kind color */
+  --color-text-purple-darker: var(--colors-purple-purple-900); /* @kind color */
+  --color-text-red-default: var(--colors-red-red-500); /* @kind color */
+  --color-text-white-default: var(--colors-white-white-00); /* @kind color */
+  --colors-grey-grey-100: rgb(232,235,237); /* @kind color */
+  --colors-grey-grey-25: rgb(252,252,252); /* @kind color */
+  --colors-grey-grey-300: rgb(206,211,216); /* @kind color */
+  --colors-grey-grey-500: rgb(182,190,197); /* @kind color */
+  --colors-grey-grey-50: rgb(248,249,249); /* @kind color */
+  --colors-grey-grey-600: rgb(166,173,179); /* @kind color */
+  --colors-grey-grey-700: rgb(129,135,140); /* @kind color */
+  --colors-grey-grey-800: rgb(100,105,108); /* @kind color */
+  --colors-grey-grey-900-2: rgb(76,80,83); /* @kind color */
+  --colors-grey-grey-900: rgb(76,80,83); /* @kind color */
+  --colors-purple-purple-100: rgb(202,190,234); /* @kind color */
+  --colors-purple-purple-300: rgb(140,115,210); /* @kind color */
+  --colors-purple-purple-500: rgb(84,46,188); /* @kind color */
+  --colors-purple-purple-600: rgb(76,42,171); /* @kind color */
+  --colors-purple-purple-800: rgb(46,25,103); /* @kind color */
+  --colors-purple-purple-900-2: rgb(23,12,55); /* @kind color */
+  --colors-purple-purple-900-3: rgb(23,12,55); /* @kind color */
+  --colors-purple-purple-900: rgb(23,12,55); /* @kind color */
+  --colors-red-red-100: rgb(245,200,200); /* @kind color */
+  --colors-red-red-500: rgb(224,78,78); /* @kind color */
+  --colors-red-red-600: rgb(204,71,71); /* @kind color */
+  --colors-red-red-650: rgb(193,69,69); /* @kind color */
+  --colors-sky-blue-sky-blue-600: rgb(122,151,196); /* @kind color */
+  --colors-white-white-00-2: rgb(255,255,255); /* @kind color */
+  --colors-white-white-00: rgb(255,255,255); /* @kind color */
+  --font-family-poppins-2: "poppins";
+  --font-family-poppins-3: "poppins";
+  --font-family-poppins: "poppins";
+  --font-size-m: 16;
+  --font-size-s-2: 14;
+  --font-size-s: 14;
+  --font-size-xl: 24;
+  --font-size-xs-2: 12;
+  --font-size-xs: 12;
+  --font-weight-medium-2: "Medium";
+  --font-weight-medium: "500";
+  --font-weight-regular-2: "400";
+  --font-weight-regular: "Regular";
+  --font-weight-semibold-2: "SemiBold";
+  --font-weight-semibold: "600";
+  --gap-m: var(--scales-s2-m-12);
+  --gap-xl-2: var(--scales-s2-xl-24);
+  --gap-xs-2: var(--scales-s2-xs-2);
+  --padding-m: var(--scales-s2-m-12);
+  --padding-s: var(--scales-s2-s-8);
+  --padding-xl-2: var(--scales-s2-xl-24);
+  --padding-xl-3: var(--scales-s2-xl-32);
+  --radius-full: var(--scales-s1-full-999);
+  --radius-s-2: var(--scales-s2-s-8);
+  --radius-s: var(--scales-s2-s-8);
+  --radius-xl: var(--scales-s2-xl-40);
+  --scales-s1-full-999: 999;
+  --scales-s2-m-12: 12;
+  --scales-s2-s-8-2: 8;
+  --scales-s2-s-8: 8;
+  --scales-s2-xl-24: 24;
+  --scales-s2-xl-32: 32;
+  --scales-s2-xl-40: 40;
+  --scales-s2-xs-2: 2;
+}

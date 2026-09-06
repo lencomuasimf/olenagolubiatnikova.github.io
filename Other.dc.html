@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:#ffffff;}
+  a{color:#181717;text-decoration:none;}
+  a:hover{color:#1FC056;}
+  ::selection{background:#1FC056;color:#fff;}
+  @keyframes fadeup{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .navlink{position:relative;transition:color .2s ease;}
+  .navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#1FC056;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  .navlink:hover::after,.navlink.active::after{transform:scaleX(1);}
+  .seg{display:inline-flex;align-items:center;border:1px solid #d8d8d8;border-radius:999px;padding:5px;background:#fff;}
+  .segbtn{appearance:none;border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:16px;font-weight:700;color:#181717;padding:11px 26px;border-radius:999px;transition:background .2s ease,color .2s ease;}
+  .segbtn.on{background:#1FC056;color:#fff;}
+  .segbtn:not(.on):hover{color:#1FC056;}
+  .entry{display:block;padding:38px 0;border-bottom:1px solid #ececec;animation:fadeup .5s ease both;}
+  .entry:first-child{border-top:1px solid #ececec;}
+  .entry .etitle{transition:color .25s ease;}
+  .entry:hover .etitle{color:#1FC056;}
+  .dline{flex:1;border-bottom:1.5px dashed #cfcfcf;margin:0 22px 10px;min-width:40px;}
+  @media (max-width:820px){
+    header{padding:20px 22px !important;gap:16px !important;}
+    header nav{gap:24px !important;}
+    main{padding:28px 22px 72px !important;}
+    footer{padding:28px 22px 40px !important;flex-wrap:wrap;justify-content:flex-start !important;gap:22px 32px !important;}
+    h1{font-size:44px !important;}
+    .entry .etitle{font-size:28px !important;}
+    .entry [style*="align-items:flex-end"]{flex-wrap:wrap;}
+    .dline{display:none !important;}
+    .entry [style*="white-space:nowrap"]{padding-bottom:0 !important;margin-top:6px;}
+  }
+  @media (max-width:440px){
+    header nav{gap:16px !important;font-size:15px !important;}
+    h1{font-size:38px !important;}
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#181717;font-family:'Anonymous Pro',ui-monospace,monospace;display:flex;flex-direction:column;">
+
+  <header style="max-width:1440px;width:100%;margin:0 auto;padding:28px 80px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:sticky;top:0;z-index:50;background:#ffffff;">
+    <a href="Home.dc.html" style="font-size:16px;line-height:1.1;letter-spacing:.005em;color:#000;">Olena<br>Golubiatnikova</a>
+    <nav style="display:flex;gap:56px;font-size:16px;padding-bottom:2px;">
+      <a class="navlink" href="Home.dc.html">Home</a>
+      <a class="navlink" href="About.dc.html">About</a>
+      <a class="navlink active" href="Other.dc.html">Notes</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1440px;width:100%;margin:0 auto;padding:56px 80px 120px;flex:1;">
+
+    <div style="max-width:760px;margin-bottom:88px;animation:fadeup .6s ease both;">
+      <h1 style="font-size:72px;font-weight:700;line-height:1.02;margin:0;letter-spacing:-.01em;">Notes</h1>
+      <div style="font-size: 16px; line-height: 1.4; color: #606060; margin: 20px 0 0; max-width: 520px"><!-- obsidian --><p>Comics and essays on product design, AI, growth, and the craft of making.</p></div>
+    </div>
+
+    <div>
+      <sc-for list="{{ entries }}" as="item" hint-placeholder-count="3">
+        <a class="entry" href="{{ item.href }}" target="_blank" rel="noopener" style="animation-delay:{{ item.delay }};">
+          <div style="font-size:15px;font-weight:700;letter-spacing:.16em;color:#9a9a9a;">{{ item.kicker }}</div>
+          <div style="display:flex;align-items:flex-end;margin-top:20px;">
+            <span class="etitle" style="font-size:44px;font-weight:700;line-height:1.05;letter-spacing:-.01em;">{{ item.title }}</span>
+            <span class="dline"></span>
+            <span style="font-size:16px;font-weight:700;letter-spacing:.14em;color:#9a9a9a;white-space:nowrap;padding-bottom:9px;">{{ item.date }}</span>
+          </div>
+          <p style="font-size: 16px; line-height: 1.45; color: #606060; margin: 20px 0 0; max-width: 840px">{{ item.desc }}</p>
+        </a>
+      </sc-for>
+    </div>
+
+  </main>
+
+  <footer style="max-width:1440px;width:100%;margin:0 auto;padding:40px 80px 56px;display:flex;justify-content:flex-end;gap:56px;font-size:16px;">
+    <a href="#" style="display:inline-flex;align-items:center;gap:14px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"></path><path d="M12 11v6"></path><path d="m15 15-3 3-3-3"></path></svg>
+      Download resume
+    </a>
+    <a href="https://www.linkedin.com/in/lencomua/" target="_blank" rel="noopener">Linkedin</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 'talks' };
+
+  data = {
+    posts: [
+      { kicker: 'MEDIUM', title: 'Shazam idea', date: 'NOV 2023', href: 'https://medium.com/@lencomua/shazam-idea-efda5d8e6399', desc: 'As a Ukrainian with wartime experience, I keep instinctively associating certain sounds with civil-defense sirens — and a small product idea for what an app could do about it.' },
+      { kicker: 'MEDIUM', title: 'What to measure if you are Product Designer', date: 'OCT 2023', href: 'https://medium.com/@lencomua/what-to-measure-if-you-are-product-designer-3aef41f9f824', desc: 'Notes and takeaways from Vitaly Friedman’s master class on design KPIs — an intense but genuinely useful session on what designers should actually be measuring.' },
+      { kicker: 'MEDIUM', title: 'Reading forecast', date: 'OCT 2023', href: 'https://medium.com/@lencomua/reading-forecast-f9c6df763656', desc: 'A concept for Goodreads: a reading forecast that estimates how long a book will take you based on your past reading pace.' },
+      { kicker: 'MEDIUM', title: 'Instagram sound cancellation', date: 'OCT 2023', href: 'https://medium.com/@lencomua/instagram-sound-cancellation-8f03f14138e3', desc: 'People who have lived through war can become sensitive to specific sounds. A short proposal for how Instagram could let you filter them out.' },
+      { kicker: 'BOOTCAMP', title: '20 books for Product Designer', date: 'SEP 2023', href: 'https://medium.com/design-bootcamp/20-books-for-product-designer-ef46c60dcaf2', desc: 'A reading list for product designers — from “Writing Is Designing” to the books that shaped how I think about craft and process.' },
+      { kicker: 'MEDIUM', title: 'The red envelope design', date: 'FEB 2019', href: 'https://medium.com/@lencomua/the-red-envelope-design-bb4293cab276', desc: 'Designing a red envelope (Hongbao) for the first time, and what the tradition taught me about designing within cultural constraints.' },
+      { kicker: 'MEDIUM', title: 'Design Leadership in Southeast Asia', date: 'FEB 2019', href: 'https://medium.com/@lencomua/design-leadership-in-southeast-asia-95601cc481e4', desc: 'What I learned about building and leading design teams from the Grab Shift event.' },
+    ],
+  };
+
+  renderVals() {
+    const entries = this.data.posts.map((e, i) => ({ ...e, delay: (i * 0.06) + 's' }));
+    return { entries };
+  }
+}
+</script>
+</body>
+</html>

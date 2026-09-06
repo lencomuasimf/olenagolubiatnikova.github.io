@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;scroll-behavior:smooth;}
+  body{background:#ffffff;}
+  a{color:#181717;text-decoration:none;}
+  a:hover{color:#1FC056;}
+  ::selection{background:#1FC056;color:#fff;}
+  section[id]{scroll-margin-top:110px;}
+  .navlink{position:relative;transition:color .2s ease;}
+  .navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#1FC056;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  .navlink:hover::after,.navlink.active::after{transform:scaleX(1);}
+  .toc{display:block;color:#606060;transition:color .2s ease;position:relative;padding-left:22px;line-height:1.2;}
+  .toc::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#1FC056;transform:translateY(-50%) scale(0);transition:transform .22s ease;}
+  .toc:hover{color:#181717;}
+  .toc.active{color:#1FC056;}
+  .toc.active::before{transform:translateY(-50%) scale(1);}
+  .reveal{opacity:0;transform:translateY(26px);}
+  .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease;}
+  figcaption{font-size:14px;color:#9a9a9a;line-height:1.4;margin-top:14px;}
+  @media (max-width:820px){
+    header{padding:20px 22px !important;gap:16px !important;}
+    header nav{gap:24px !important;}
+    main{padding:24px 22px 64px !important;}
+    footer{padding:28px 22px 40px !important;flex-wrap:wrap;justify-content:flex-start !important;gap:22px 32px !important;}
+    h1{font-size:38px !important;}
+    h2{font-size:28px !important;}
+    [style*="display:flex;gap:72px"]{flex-direction:column !important;gap:8px !important;}
+    aside[style*="flex:0 0 200px"]{display:none !important;}
+    [style*="max-width:880px"]{max-width:100% !important;}
+    [style*="display:grid"]{grid-template-columns:1fr !important;}
+    [style*="display:flex;gap:32px"]{flex-direction:column !important;gap:20px !important;}
+  }
+  @media (max-width:440px){
+    header nav{gap:16px !important;font-size:15px !important;}
+    h1{font-size:32px !important;}
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#181717;font-family:'Anonymous Pro',ui-monospace,monospace;display:flex;flex-direction:column;">
+
+  <header style="max-width:1440px;width:100%;margin:0 auto;padding:28px 80px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:sticky;top:0;z-index:50;background:#ffffff;">
+    <a href="Home.dc.html" style="font-size:16px;line-height:1.1;letter-spacing:.005em;color:#000;">Olena<br>Golubiatnikova</a>
+    <nav style="display:flex;gap:56px;font-size:16px;padding-bottom:2px;">
+      <a class="navlink active" href="Home.dc.html">Home</a>
+      <a class="navlink" href="About.dc.html">About</a>
+      <a class="navlink" href="Other.dc.html">Notes</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1440px;width:100%;margin:0 auto;padding:32px 80px 80px;flex:1;">
+
+    <div style="font-size:18px;color:#606060;margin-bottom:14px;">2025 Q4 · Wunderflats</div>
+    <h1 style="font-size:60px;font-weight:700;line-height:1.05;margin:0 0 20px;max-width:1100px;">Frictionless payments</h1>
+    <p style="font-size:16px;font-style:italic;line-height:1.4;color:#606060;margin:0 0 44px;max-width:760px;">A payment experience that reduces failures and early-stage drop-off.</p>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding:32px 0;border-top:1px solid #181717;border-bottom:1px solid #181717;margin-bottom:72px;">
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">My Role</div>
+        <div style="font-size:16px;color:#606060;line-height:1.35;">Ideation, user research, strategy, design, implementation support</div>
+      </div>
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Team</div>
+        <div style="display:flex;align-items:center;font-size:15px;font-weight:700;line-height:1;padding-top:2px;">
+          <span title="Me (Product Designer)" style="width:48px;height:48px;border-radius:50%;background:#1FC056;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:4;">Me</span>
+          <span title="Product Manager" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:3;margin-left:-6px;">PM</span>
+          <span title="Tech Lead" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:2;margin-left:-6px;">TL</span>
+          <span title="Developer" style="width:48px;height:48px;border-radius:50%;background:#181717;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;position:relative;z-index:1;margin-left:-6px;">Dev</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Timeline</div>
+        <div style="font-size:16px;color:#606060;line-height:1.35;">Q4 2025</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:72px;align-items:flex-start;">
+
+      <aside style="flex:0 0 200px;position:sticky;top:110px;align-self:flex-start;">
+        <nav style="display:flex;flex-direction:column;gap:20px;font-size:14px;">
+          <a class="toc" href="#problem" data-t="problem">The problem</a>
+          <a class="toc" href="#approach" data-t="approach">How I approached it</a>
+          <a class="toc" href="#pains" data-t="pains">Top pain points</a>
+          <a class="toc" href="#solving" data-t="solving">Solving it</a>
+          <a class="toc" href="#live" data-t="live">What went live</a>
+          <a class="toc" href="#impact" data-t="impact">Impact</a>
+        </nav>
+      </aside>
+
+      <div style="flex:1;min-width:0;max-width:880px;display:flex;flex-direction:column;gap:96px;">
+
+        <section id="problem" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">The problem</h2>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 32px;color:#181717;">To confirm apartment booking, a user must submit a payment method. The payment method is only charged after the landlord confirms the booking, so the user is not present at this stage.<br><br>This flow leads to a high rate of failed payments because users are not there to resolve possible payment issues. High-value transactions also tend to have a higher payment failure rate.</p>
+          <div style="font-size:15px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:20px;">THE COST OF THAT</div>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #B8BCC1;">
+            <div style="padding:22px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="font-size:19px;font-weight:700;margin-bottom:6px;">Failed payments create poor customer experience</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">If a payment fails, the booking is cancelled, creating a frustrating experience for both the landlord and tenant.</div>
+            </div>
+            <div style="padding:22px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="font-size:19px;font-weight:700;margin-bottom:6px;">Payment failures increase operational workload</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Failed payments also require additional time and effort from the Customer Operations Booking Manager.</div>
+            </div>
+          </div>
+          <figure style="margin:32px 0 0;">
+            <div style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;">
+              <image-slot id="pay-problem" shape="rect" placeholder="The broken checkout — where users dropped off"></image-slot>
+            </div>
+          </figure>
+        </section>
+
+        <section id="approach" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">How I approached it</h2>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #181717;">
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">01</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">Mapped the payment funnel</div><div style="font-size:16px;color:#606060;line-height:1.45;">Traced every step from checkout to confirmation to find where and why payments fail.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">02</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">Looked at the failure data</div><div style="font-size:16px;color:#606060;line-height:1.45;">Segmented failures by method and error code; a handful of causes drove most of the drop-off.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:16px;color:#9a9a9a;">03</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:8px;">User interviews + payments support tickets</div><div style="font-size:16px;color:#606060;line-height:1.45;">Talking to users and reading support tickets showed the real problem was not the failure itself but the dead end after it: people did not know whether they were charged, what went wrong, or how to try again.</div></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pains" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">Top pain points</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Fragile checkout</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">The checkout was breaking on edge cases and was offering no graceful way to recover a failed attempt.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Unhelpful errors</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Failed payments were returning generic messages, and only <b style="color: rgb(24, 23, 23);">18%</b> of users who hit an error attempted a retry.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">“Was I charged?”</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">Unclear payment states was leaving users unsure whether money had left their account, driving anxious support contacts.</div>
+            </div>
+            <div style="background:#fff;padding:30px;border:1px solid #DDE0E3;border-radius:8px;">
+              <div style="font-size:20px;font-weight:700;margin-bottom:10px;">Limited method coverage</div>
+              <div style="font-size:16px;color:#606060;line-height:1.45;">The checkout was relying on a narrow set of methods, excluding the local options many users preferred.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solving" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">Solving it</h2>
+
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">Ideate, then prioritise</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 16px;color:#181717;">Before the team workshop, I drafted ideas mapped to each pain point, for example:</p>
+          <ul style="font-size:16px;line-height:1.5;color:#606060;margin:0 0 20px;padding-left:24px;display:flex;flex-direction:column;gap:10px;">
+            <li>A <b style="color:#181717;">clear failure state</b> with a plain-language reason and an obvious retry.</li>
+            <li>A <b style="color:#181717;">smart retry</b> that keeps the entered details and suggests a working method.</li>
+            <li><b style="color:#181717;">Broader payment methods</b>, including local options, surfaced by relevance.</li>
+          </ul>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 44px;color:#606060;">I ran a workshop with the wider team to understand the technical complexity and decide what to ship first and what to do later.</p>
+
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">The strategy</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 24px;color:#181717;">Ship a better failure-and-retry experience fast, while rebuilding the checkout in parallel.</p>
+          <div style="display:flex;gap:32px;margin:0 0 24px;">
+            <div style="flex:1;border-top:2px solid #1FC056;padding-top:18px;">
+              <div style="font-size:13px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:10px;">QUICK WIN</div>
+              <div style="font-size:16px;line-height:1.45;">Redesigned error and retry states.</div>
+            </div>
+            <div style="flex:1;border-top:2px solid #1FC056;padding-top:18px;">
+              <div style="font-size:13px;letter-spacing:.16em;color:#9a9a9a;margin-bottom:10px;">LONG-TERM</div>
+              <div style="font-size:16px;line-height:1.45;"><p>Instead of saving the payment method, the new solution reserves the first month’s rent, giving the user time to resolve any payment issues. The amount is only charged once the landlord confirms the booking.</p></div>
+            </div>
+          </div>
+          <h3 style="font-size:23px;font-weight:700;margin:0 0 16px;">Prototype and test</h3>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 24px;color:#606060;">The first prototype exposed how many payment states we had never designed for. Testing made one thing clear: <b style="color:#181717;">people need to know exactly what happened and what to do next, in plain language.</b></p>
+
+        </section>
+
+        <section id="live" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 32px;">What went live</h2>
+          <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #181717;">
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">1</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">Recoverable checkout</div><div style="font-size:16px;color:#606060;line-height:1.45;">Failed payments now show a clear reason and a one-tap retry that keeps your details.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">2</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">Clear payment status</div><div style="font-size:16px;color:#606060;line-height:1.45;">Pending, failed, and confirmed states are unambiguous throughout the flow.</div></div>
+            </div>
+            <div style="display:flex;gap:28px;padding:26px 0;border-bottom:1px solid #B8BCC1;">
+              <div style="flex:0 0 44px;font-size:28px;font-weight:700;line-height:1;color:#1FC056;">3</div>
+              <div><div style="font-size:20px;font-weight:700;margin-bottom:6px;">Expanded methods</div><div style="font-size:16px;color:#606060;line-height:1.45;">Added local and preferred payment methods, surfaced by relevance.</div></div>
+            </div>
+          </div>
+          <figure style="margin:40px 0 0;">
+            <div style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;">
+              <image-slot id="pay-live" shape="rect" placeholder="Live checkout — failure, retry and confirmed states"></image-slot>
+            </div>
+          </figure>
+        </section>
+
+        <section id="impact" class="reveal">
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 24px;">Impact</h2>
+          <div style="margin-bottom:36px;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">−34%</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">Payment failure rate</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">Fewer first-attempt failures after the checkout rebuild.</div>
+              </div>
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">↑</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">Activation rate</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">A clear retry path recovered payments that used to be lost.</div>
+              </div>
+              <div style="border-left:2px solid #1FC056;padding-left:20px;">
+                <div style="font-size:44px;font-weight:700;line-height:1;">↑</div>
+                <div style="font-size:16px;font-weight:700;margin:14px 0 8px;">Trial-to-customer</div>
+                <div style="font-size:16px;line-height:1.4;color:#606060;">Reduced early-stage drop-off around the first payment.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <p style="font-size:16px;line-height:1.5;margin:0;color:#606060;"><b style="color:#181717;">Fewer support requests</b> asking “was I charged?”.</p>
+            <p style="font-size:16px;line-height:1.5;margin:0;color:#606060;"><b style="color:#181717;">Better UX across checkout</b>: a consistent, accessible, usability-tested payment experience end to end.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer style="max-width:1440px;width:100%;margin:0 auto;padding:40px 80px 56px;display:flex;justify-content:flex-end;gap:56px;font-size:16px;">
+    <a href="#" style="display:inline-flex;align-items:center;gap:14px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"></path><path d="M12 11v6"></path><path d="m15 15-3 3-3-3"></path></svg>
+      Download resume
+    </a>
+    <a href="https://www.linkedin.com/in/lencomua/" target="_blank" rel="noopener">Linkedin</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const revs = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revs.forEach(el => ro.observe(el));
+
+    const links = Array.from(document.querySelectorAll('.toc'));
+    const byId = {};
+    links.forEach(l => byId[l.getAttribute('data-t')] = l);
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const a = byId[e.target.id];
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(s => spy.observe(s));
+    if (links[0]) links[0].classList.add('active');
+  }
+}
+</script>
+</body>
+</html>
