@@ -1,2 +1,0 @@
-# olenagolubiatnikova.github.io
-portfolio
